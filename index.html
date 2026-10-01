@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northview Construction Co. — Vaughan, ON | Custom Homes, Renovations & Additions</title>
+<meta name="description" content="Northview Construction Co. in Vaughan, ON. Custom home builds, additions, kitchen & bathroom renovations, basement finishing and more. Licensed & insured. Get a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf7f1;
+  --paper-2:#f3ede1;
+  --ink:#1c1917;
+  --ink-soft:#44403c;
+  --muted:#78716c;
+  --accent:#ea580c;
+  --accent-dark:#c2410c;
+  --accent-soft:#ffedd5;
+  --line:rgba(28,25,23,.12);
+  --dark:#1c1917;
+  --dark-2:#292524;
+  --dark-line:rgba(250,247,241,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.display{font-family:'Oswald',sans-serif;text-transform:uppercase;line-height:1.05}
+a{color:inherit}
+img{max-width:100%;display:block}
+section{padding:5.5rem 5vw;scroll-margin-top:84px}
+.wrap{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-dark);display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+.eyebrow::before{content:'';width:26px;height:3px;background:var(--accent)}
+h2.section-title{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;max-width:18ch}
+.section-sub{margin-top:1rem;color:var(--ink-soft);max-width:56ch}
+/* hazard stripe */
+.hazard{height:12px;background:repeating-linear-gradient(-45deg,#f5b301 0 14px,var(--ink) 14px 28px)}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 5vw;background:rgba(250,247,241,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .2s}
+header.scrolled{box-shadow:0 6px 24px rgba(28,25,23,.12)}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.logo-mark{width:34px;height:34px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:'Oswald';font-weight:700;font-size:1.1rem;position:relative;overflow:hidden}
+.logo-mark::after{content:'';position:absolute;left:0;right:0;bottom:0;height:7px;background:repeating-linear-gradient(-45deg,#f5b301 0 6px,var(--ink) 6px 12px)}
+.logo-text{font-family:'Oswald';font-weight:700;text-transform:uppercase;font-size:1.02rem;letter-spacing:.02em;line-height:1.1}
+.logo-text small{display:block;font-family:'Inter';font-weight:600;font-size:.6rem;letter-spacing:.28em;color:var(--muted)}
+nav.main{display:flex;align-items:center;gap:1.6rem}
+nav.main a{font-size:.76rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;color:var(--ink-soft);transition:color .2s}
+nav.main a:hover{color:var(--accent-dark)}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;padding:.95rem 1.7rem;text-decoration:none;transition:all .2s ease;cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 10px 24px rgba(234,88,12,.35)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000;transform:translateY(-2px)}
+.btn-outline{border:2px solid rgba(255,255,255,.55);color:#fff}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem}
+.nav-toggle span{width:26px;height:2px;background:var(--ink);transition:.2s}
+@media(max-width:900px){
+  nav.main{position:fixed;top:0;right:-100%;width:min(78vw,320px);height:100dvh;background:var(--ink);flex-direction:column;align-items:flex-start;justify-content:center;padding:3rem 2.2rem;gap:1.4rem;transition:right .3s ease}
+  nav.main.open{right:0}
+  nav.main a{color:#fff;font-size:.95rem}
+  .nav-toggle{display:flex;z-index:101}
+  .nav-toggle.open span{background:#fff}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:flex-end;position:relative;padding:0;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center/cover no-repeat;transform:scale(1.04)}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,9,.55) 0%,rgba(12,10,9,.25) 40%,rgba(12,10,9,.82) 100%)}
+.hero-inner{position:relative;z-index:1;padding:9rem 5vw 4.5rem;width:100%}
+.hero-eyebrow{font-size:.76rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#fdba74;display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem}
+.hero-eyebrow::before{content:'';width:32px;height:3px;background:var(--accent)}
+h1.hero-title{font-family:'Oswald';font-weight:700;text-transform:uppercase;font-size:clamp(2.9rem,8.4vw,6.6rem);line-height:1;max-width:14ch}
+h1.hero-title .hl{color:#fdba74}
+.hero-sub{margin-top:1.4rem;max-width:44ch;font-size:1.05rem;color:#e7e5e4}
+.hero-actions{display:flex;gap:1rem;margin-top:2.2rem;flex-wrap:wrap}
+.hero-stats{display:flex;gap:0;margin-top:3rem;border-top:1px solid rgba(255,255,255,.22);padding-top:1.8rem;flex-wrap:wrap}
+.stat{padding:0 2.4rem;border-left:1px solid rgba(255,255,255,.22)}
+.stat:first-child{padding-left:0;border-left:none}
+.stat-num{font-family:'Oswald';font-weight:700;font-size:2rem;line-height:1;color:#fff}
+.stat-label{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#d6d3d1;margin-top:.4rem}
+@media(max-width:640px){.stat{padding:.9rem 0 0;border-left:none;border-top:1px solid rgba(255,255,255,.22);width:100%}.stat:first-child{border-top:none;padding-top:0}}
+/* marquee */
+.marquee-wrap{background:var(--accent);overflow:hidden;padding:.8rem 0}
+.marquee{display:flex;width:max-content;animation:scroll 30s linear infinite}
+.marquee span{font-family:'Oswald';font-weight:600;text-transform:uppercase;font-size:1rem;letter-spacing:.04em;color:#fff;padding:0 1.4rem;white-space:nowrap;display:flex;align-items:center;gap:1.4rem}
+.marquee span::after{content:'◆';font-size:.7rem;opacity:.7}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* services */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:3rem}
+@media(max-width:1000px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.services-grid{grid-template-columns:1fr}}
+.service-card{background:#fff;border:1px solid var(--line);padding:1.9rem 1.6rem;display:flex;flex-direction:column;gap:.7rem;position:relative;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(28,25,23,.12)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-num{font-family:'Oswald';font-weight:600;font-size:.8rem;color:var(--accent-dark);letter-spacing:.1em}
+.service-name{font-family:'Oswald';font-weight:600;text-transform:uppercase;font-size:1.25rem;line-height:1.2}
+.service-desc{font-size:.9rem;color:var(--ink-soft);flex:1}
+.service-link{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-dark);text-decoration:none}
+/* projects */
+.projects{background:var(--ink);color:var(--paper)}
+.projects .eyebrow{color:#fdba74}
+.projects h2.section-title{color:#fff}
+.projects .section-sub{color:#a8a29e}
+.project-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:3rem}
+@media(max-width:1000px){.project-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.project-grid{grid-template-columns:1fr}}
+.project-card{position:relative;overflow:hidden;text-decoration:none;display:block;aspect-ratio:4/5;background:var(--dark-2)}
+.project-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;filter:saturate(.92)}
+.project-card:hover img{transform:scale(1.06)}
+.project-label{position:absolute;left:0;right:0;bottom:0;padding:1.1rem 1.2rem;background:linear-gradient(0deg,rgba(12,10,9,.88),transparent);color:#fff}
+.project-label strong{font-family:'Oswald';font-weight:600;text-transform:uppercase;font-size:1.02rem;letter-spacing:.03em;display:block}
+.project-label span{font-size:.74rem;color:#d6d3d1;letter-spacing:.06em;text-transform:uppercase}
+/* why us */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;background:var(--paper-2)}
+@media(max-width:860px){.why{grid-template-columns:1fr}}
+.why-img{position:relative}
+.why-img img{width:100%;aspect-ratio:4/3.4;object-fit:cover}
+.why-img::after{content:'';position:absolute;left:18px;top:18px;right:-18px;bottom:-18px;border:3px solid var(--accent);z-index:-1}
+.why-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.05rem}
+.why-list li{display:flex;gap:.9rem;align-items:flex-start;font-size:.96rem}
+.why-list .tick{flex:none;width:26px;height:26px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.85rem;margin-top:.15rem}
+.why-list strong{display:block;font-size:.95rem}
+.why-list p{font-size:.88rem;color:var(--ink-soft)}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:3rem}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.step{border-top:4px solid var(--accent);padding-top:1.4rem}
+.step-num{font-family:'Oswald';font-weight:700;font-size:2.6rem;color:var(--accent);line-height:1}
+.step h3{font-family:'Oswald';font-weight:600;text-transform:uppercase;font-size:1.15rem;margin:.7rem 0 .5rem}
+.step p{font-size:.9rem;color:var(--ink-soft)}
+/* reviews */
+.reviews{background:var(--paper-2)}
+.reviews-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.6rem}
+.rating-badge{display:flex;align-items:center;gap:1rem;background:#fff;border:1px solid var(--line);padding:1rem 1.4rem}
+.rating-num{font-family:'Oswald';font-weight:700;font-size:2.6rem;color:var(--accent-dark);line-height:1}
+.rating-stars{color:var(--accent);letter-spacing:.12em}
+.rating-sub{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
+@media(max-width:680px){.review-grid{grid-template-columns:1fr}}
+.review-card{background:#fff;border:1px solid var(--line);padding:2rem;display:flex;flex-direction:column;gap:1rem}
+.review-stars{color:var(--accent);letter-spacing:.18em;font-size:.85rem}
+.review-text{font-size:.95rem;line-height:1.65;flex:1}
+.review-author{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+/* service area */
+.area-pills{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
+.area-pills span{border:1px solid var(--line);background:#fff;padding:.55rem 1.1rem;font-size:.82rem;font-weight:600;letter-spacing:.04em}
+/* quote */
+.quote{background:var(--ink);color:var(--paper)}
+.quote .eyebrow{color:#fdba74}
+.quote h2.section-title{color:#fff}
+.quote-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:3.5rem;margin-top:2.6rem}
+@media(max-width:860px){.quote-grid{grid-template-columns:1fr}}
+form.quote-form{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:560px){form.quote-form{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field.full{grid-column:1/-1}
+.field label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d6d3d1}
+.field input,.field select,.field textarea{background:var(--dark-2);border:1px solid var(--dark-line);color:#fff;padding:.85rem 1rem;font-family:'Inter';font-size:.95rem;border-radius:0}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.field textarea{min-height:120px;resize:vertical}
+.form-note{grid-column:1/-1;font-size:.78rem;color:#a8a29e}
+.form-success{grid-column:1/-1;display:none;background:#14532d;color:#fff;padding:1.2rem 1.4rem;font-size:.95rem}
+.contact-card{background:var(--dark-2);border:1px solid var(--dark-line);padding:2.2rem;display:flex;flex-direction:column;gap:1.3rem;height:fit-content}
+.contact-row{display:flex;gap:1rem;align-items:flex-start}
+.contact-ico{flex:none;width:38px;height:38px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:1.05rem}
+.contact-row strong{display:block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fdba74;margin-bottom:.25rem}
+.contact-row p,.contact-row a{font-size:.98rem;color:#fff;text-decoration:none}
+.contact-row a:hover{color:#fdba74}
+/* footer */
+footer{background:#0c0a09;color:#a8a29e;padding:3.5rem 5vw 2rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;max-width:1200px;margin:0 auto}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
+.foot-brand .logo-text{color:#fff}
+.foot-brand p{font-size:.88rem;margin-top:1rem;max-width:34ch}
+.foot-col h4{font-family:'Oswald';font-weight:600;text-transform:uppercase;color:#fff;font-size:.95rem;letter-spacing:.06em;margin-bottom:1rem}
+.foot-col a{display:block;font-size:.88rem;text-decoration:none;padding:.28rem 0;color:#a8a29e}
+.foot-col a:hover{color:#fdba74}
+.foot-base{max-width:1200px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(250,247,241,.12);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.76rem;color:#78716c}
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a class="logo" href="#top" aria-label="Northview Construction Co. home">
+    <span class="logo-mark">N</span>
+    <span class="logo-text">Northview<small>Construction Co.</small></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="main" id="mainNav" aria-label="Main navigation">
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#why">Why Us</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="#quote" class="btn btn-primary" style="color:#fff">Free Quote</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="hero-bg" role="img" aria-label="House under construction at sunset"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner wrap">
+    <p class="hero-eyebrow">Vaughan, Ontario — Licensed &amp; Insured</p>
+    <h1 class="hero-title">Built Right.<br><span class="hl">Built to Last.</span></h1>
+    <p class="hero-sub">Northview Construction Co. is Vaughan's design-build contractor for custom homes, additions and full-home renovations — on schedule, on budget, without the headaches.</p>
+    <div class="hero-actions">
+      <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
+      <a href="#projects" class="btn btn-outline">View Our Work</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Years Combined Experience</span></div>
+      <div class="stat"><span class="stat-num">120+</span><span class="stat-label">Projects Completed</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Licensed &amp; Insured</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee">
+    <span>Custom Home Builds</span><span>Additions</span><span>Kitchen Renovations</span><span>Bathroom Renovations</span><span>Basement Finishing</span><span>Roofing &amp; Exteriors</span><span>Decks &amp; Outdoor Living</span><span>Commercial Build-Outs</span>
+    <span>Custom Home Builds</span><span>Additions</span><span>Kitchen Renovations</span><span>Bathroom Renovations</span><span>Basement Finishing</span><span>Roofing &amp; Exteriors</span><span>Decks &amp; Outdoor Living</span><span>Commercial Build-Outs</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow reveal">What We Do</p>
+    <h2 class="section-title display reveal">One Contractor for the Whole Job</h2>
+    <p class="section-sub reveal">From the first sketch to the final walkthrough, our in-house crew handles design, permits, trades and finishing — so you deal with one accountable team.</p>
+    <div class="services-grid">
+      <a class="service-card reveal" href="#quote">
+        <span class="service-num">01</span>
+        <h3 class="service-name">Custom Home Builds</h3>
+        <p class="service-desc">Ground-up custom homes built to your plans, engineered for Ontario winters and finished to a show-home standard.</p>
+        <span class="service-link">Get a quote →</span>
+      </a>
+      <a class="service-card reveal" href="#quote">
+        <span class="service-num">02</span>
+        <h3 class="service-name">Home Additions</h3>
+        <p class="service-desc">Second-storey additions, rear extensions and in-law suites that blend seamlessly with your existing home.</p>
+        <span class="service-link">Get a quote →</span>
+      </a>
+      <a class="service-card reveal" href="#quote">
+        <span class="service-num">03</span>
+        <h3 class="service-name">Kitchen Renovations</h3>
+        <p class="service-desc">Full gut-and-rebuild kitchens: layout redesign, custom cabinetry, stone counters and lighting done right.</p>
+        <span class="service-link">Get a quote →</span>
+      </a>
+      <a class="service-card reveal" href="#quote">
+        <span class="service-num">04</span>
+        <h3 class="service-name">Bathroom Renovations</h3>
+        <p class="service-desc">Spa-grade bathrooms with proper waterproofing, heated floors, walk-in showers and precision tile work.</p>
+        <span class="service-link">Get a quote →</span>
+      </a>
+      <a class="service-card reveal" href="#quote">
+        <span class="service-num">05</span>
+        <h3 class="service-name">Basement Finishing</h3>
+        <p class="service-desc">Turn dead square footage into living space — rec rooms, home theatres, gyms and legal basement apartments.</p>
+        <span class="service-link">Get a quote →</span>
+      </a>
+      <a class="service-card reveal" href="#quote">
+        <span class="service-num">06</span>
+        <h3 class="service-name">Roofing &amp; Exteriors</h3>
+        <p class="service-desc">Roof replacements, siding, windows and doors installed to manufacturer spec for maximum lifespan.</p>
+        <span class="service-link">Get a quote →</span>
+      </a>
+      <a class="service-card reveal" href="#quote">
+        <span class="service-num">07</span>
+        <h3 class="service-name">Decks &amp; Outdoor Living</h3>
+        <p class="service-desc">Composite decks, fences, pergolas and outdoor kitchens built to handle Canadian weather year after year.</p>
+        <span class="service-link">Get a quote →</span>
+      </a>
+      <a class="service-card reveal" href="#quote">
+        <span class="service-num">08</span>
+        <h3 class="service-name">Commercial Build-Outs</h3>
+        <p class="service-desc">Office, retail and restaurant tenant improvements delivered fast with minimal disruption to your business.</p>
+        <span class="service-link">Get a quote →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="wrap">
+    <p class="eyebrow reveal">Recent Work</p>
+    <h2 class="section-title display reveal">Projects We're Proud Of</h2>
+    <p class="section-sub reveal">A sample of recent builds and renovations across Vaughan and the GTA. Every project gets the same crew, the same standards, the same pride.</p>
+    <div class="project-grid">
+      <a class="project-card reveal" href="#quote">
+        <img src="images/kitchen.jpg" alt="Modern renovated kitchen with island" loading="lazy">
+        <div class="project-label"><strong>Maple Kitchen Gut &amp; Rebuild</strong><span>Vaughan — Kitchen Renovation</span></div>
+      </a>
+      <a class="project-card reveal" href="#quote">
+        <img src="images/bathroom.jpg" alt="Contemporary walk-in shower bathroom" loading="lazy">
+        <div class="project-label"><strong>Spa Bathroom Retreat</strong><span>Richmond Hill — Bathroom Renovation</span></div>
+      </a>
+      <a class="project-card reveal" href="#quote">
+        <img src="images/exterior.jpg" alt="Modern two-storey custom home at dusk" loading="lazy">
+        <div class="project-label"><strong>Custom Two-Storey Build</strong><span>Kleinburg — New Construction</span></div>
+      </a>
+      <a class="project-card reveal" href="#quote">
+        <img src="images/basement.jpg" alt="Finished basement home theatre lounge" loading="lazy">
+        <div class="project-label"><strong>Basement Theatre &amp; Bar</strong><span>Markham — Basement Finishing</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="wrap" style="display:contents">
+    <div class="why-img reveal">
+      <img src="images/blueprints.jpg" alt="Contractor reviewing blueprints with client on job site" loading="lazy">
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Why Northview</p>
+      <h2 class="section-title display">The Contractor That Actually Calls Back</h2>
+      <p class="section-sub">Renovations have a trust problem. We fix it with licensed crews, fixed written quotes and communication you don't have to chase.</p>
+      <ul class="why-list">
+        <li><span class="tick">✓</span><div><strong>Licensed &amp; insured, WSIB-covered crew</strong><p>Every worker on your property is covered and every job meets Ontario Building Code.</p></div></li>
+        <li><span class="tick">✓</span><div><strong>Fixed written quotes — no surprise extras</strong><p>The price we sign is the price you pay, unless you change the scope.</p></div></li>
+        <li><span class="tick">✓</span><div><strong>Free on-site estimates</strong><p>We walk the job, measure twice and give you an honest number within 48 hours.</p></div></li>
+        <li><span class="tick">✓</span><div><strong>Clean, respectful job sites</strong><p>Daily tidy-up, dust control and shoe covers. Your home is treated like our own.</p></div></li>
+        <li><span class="tick">✓</span><div><strong>2-year workmanship warranty</strong><p>If our work fails, we come back and make it right. In writing.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow reveal">How It Works</p>
+    <h2 class="section-title display reveal">From First Call to Final Walkthrough</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Site Visit &amp; Consult</h3>
+        <p>We visit, listen to what you want, measure everything and flag anything that could bite later.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Fixed Quote</h3>
+        <p>Within 48 hours you get a detailed, line-item quote. No allowances hiding the real cost.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Build</h3>
+        <p>Permits, trades, inspections — handled by us. You get weekly photo updates and one point of contact.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <h3>Walkthrough</h3>
+        <p>We walk every inch together, fix any deficiency on the spot, and hand over warranty docs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div class="reveal">
+        <p class="eyebrow">Client Reviews</p>
+        <h2 class="section-title display">Word of Mouth Is Our Marketing</h2>
+      </div>
+      <div class="rating-badge reveal">
+        <span class="rating-num">5.0</span>
+        <div><div class="rating-stars">★★★★★</div><div class="rating-sub">Average project rating</div></div>
+      </div>
+    </div>
+    <div class="review-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Northview took our 1970s kitchen down to the studs and rebuilt it better than we imagined. On schedule, on budget, and the crew was respectful of our home."</p>
+        <p class="review-author">— Kitchen Renovation, Vaughan</p>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They finished our basement and added a full bathroom. Communication was excellent the whole way — we always knew what was happening and when."</p>
+        <p class="review-author">— Basement Finishing, Markham</p>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Our second-storey addition was a big job and they handled permits, trades and inspections without us lifting a finger. The house feels brand new."</p>
+        <p class="review-author">— Home Addition, Richmond Hill</p>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Professional from the first quote to the final walkthrough. The attention to detail in the tile work alone was worth it."</p>
+        <p class="review-author">— Bathroom Renovation, Thornhill</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="areas" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow reveal">Service Area</p>
+    <h2 class="section-title display reveal">Proudly Serving the GTA</h2>
+    <p class="section-sub reveal">Based in Vaughan, on job sites across the Greater Toronto Area every week.</p>
+    <div class="area-pills reveal">
+      <span>Vaughan</span><span>Richmond Hill</span><span>Markham</span><span>Thornhill</span><span>Kleinburg</span><span>North York</span><span>Etobicoke</span><span>Mississauga</span><span>Toronto</span>
+    </div>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<!-- QUOTE -->
+<section class="quote" id="quote">
+  <div class="wrap">
+    <p class="eyebrow reveal">Free Estimates</p>
+    <h2 class="section-title display reveal">Tell Us About Your Project</h2>
+    <div class="quote-grid">
+      <form class="quote-form reveal" id="quoteForm" novalidate>
+        <div class="field">
+          <label for="qName">Full Name</label>
+          <input id="qName" name="name" type="text" placeholder="Jane Doe" required>
+        </div>
+        <div class="field">
+          <label for="qPhone">Phone</label>
+          <input id="qPhone" name="phone" type="tel" placeholder="(416) 555-0123" required>
+        </div>
+        <div class="field full">
+          <label for="qEmail">Email</label>
+          <input id="qEmail" name="email" type="email" placeholder="jane@example.com" required>
+        </div>
+        <div class="field full">
+          <label for="qType">Project Type</label>
+          <select id="qType" name="project_type" required>
+            <option value="" disabled selected>Select a project type…</option>
+            <option>Custom Home Build</option>
+            <option>Home Addition</option>
+            <option>Kitchen Renovation</option>
+            <option>Bathroom Renovation</option>
+            <option>Basement Finishing</option>
+            <option>Roofing / Exterior</option>
+            <option>Deck / Outdoor Living</option>
+            <option>Commercial Build-Out</option>
+            <option>Something Else</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="qMsg">Project Details</label>
+          <textarea id="qMsg" name="message" placeholder="Tell us about the scope, timeline and anything else we should know…" required></textarea>
+        </div>
+        <div class="form-success" id="formSuccess" role="status">Thanks — your request is in. We'll call you back within one business day to schedule your free on-site estimate.</div>
+        <div class="field full">
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Request My Free Quote</button>
+        </div>
+        <p class="form-note">No spam, no pressure. Your details stay with us and are only used to prepare your estimate.</p>
+      </form>
+      <aside class="contact-card reveal" id="contact">
+        <div class="contact-row">
+          <span class="contact-ico">◈</span>
+          <div><strong>Visit</strong><p>4 Claudia Ave<br>Vaughan, ON, Canada</p></div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-ico">✆</span>
+          <div><strong>Call</strong><p><a href="tel:+16477055245">+1 (647) 705-5245</a></p></div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-ico">✉</span>
+          <div><strong>Email</strong><p><a href="mailto:info@northviewconstruction.ca">info@northviewconstruction.ca</a></p></div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-ico">◷</span>
+          <div><strong>Hours</strong><p>Mon–Fri: 8:00 AM – 5:00 PM<br>Sat: By appointment<br>Sun: Closed</p></div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-ico">◎</span>
+          <div><strong>Instagram</strong><p><a href="https://www.instagram.com/northviewconstco" target="_blank" rel="noopener">@northviewconstco</a></p></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="#top" style="text-decoration:none">
+        <span class="logo-mark">N</span>
+        <span class="logo-text">Northview<small>Construction Co.</small></span>
+      </a>
+      <p>Vaughan's design-build contractor for custom homes, additions and renovations. Licensed &amp; insured. Built right, built to last.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#quote">Free Quote</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <a href="tel:+16477055245">+1 (647) 705-5245</a>
+      <a href="mailto:info@northviewconstruction.ca">info@northviewconstruction.ca</a>
+      <a href="https://www.instagram.com/northviewconstco" target="_blank" rel="noopener">Instagram</a>
+      <a href="#quote">4 Claudia Ave, Vaughan, ON</a>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 Northview Construction Co. All rights reserved.</span>
+    <span>Demo website — content is illustrative.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header=document.getElementById('siteHeader');
+  addEventListener('scroll',function(){header.classList.toggle('scrolled',scrollY>10)},{passive:true});
+  var toggle=document.getElementById('navToggle'),nav=document.getElementById('mainNav');
+  toggle.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    toggle.classList.toggle('open',open);
+    toggle.setAttribute('aria-expanded',open);
+  });
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){
+    nav.classList.remove('open');toggle.classList.remove('open');toggle.setAttribute('aria-expanded','false');
+  })});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  var form=document.getElementById('quoteForm');
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return}
+    document.getElementById('formSuccess').style.display='block';
+    form.querySelector('button[type=submit]').disabled=true;
+    form.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
+</body>
+</html>
